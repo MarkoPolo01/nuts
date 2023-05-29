@@ -1,0 +1,126 @@
+$primary-color: #527CCD;
+
+.basic_div {
+  display: flex;
+  justify-content: center;
+
+  .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    h1 {
+      color: $primary-color;
+      font-size: 50px;
+    }
+
+    .navigation {
+      display: flex;
+    }
+
+    .scroll-size {
+      width: 100%;
+      margin-top: 60px;
+      max-width: 360px;
+      height: 1px; /* Increase height for a more noticeable scrollbar */
+      background-color: #C8D9FB;
+      border-radius: 5px; /* Add rounded corners for the scrollbar */
+      .scroll-bar {
+        width: 360px;
+        height: 1px;
+        background-color: #C8D9FB;
+
+
+
+        .scroll-thumb {
+          width: 60px;
+          height: 1px;
+          background-color: #527CCD;
+          cursor: pointer;
+          position: relative;
+          left: 0;
+          top: 0;
+          border-radius: 5px; /* Add rounded corners for the thumb */
+        }
+      }
+    }
+
+    .next-btn {
+      margin-left: 40px;
+    }
+
+    .prev-btn {
+      margin-left: 40px;
+    }
+  }
+
+  button {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  .slider-container {
+    width: 1100px;
+    height: 800px;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slider {
+    display: flex;
+    max-width: calc(200px * 4 + 40px * 3); /* Adjust the calculation based on your slide width and spacing */
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    width: 200px;
+    height: 400px;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #527CCD;
+    margin-right: 40px;
+
+    p {
+      font-family: 'Roboto', sans-serif;
+      text-align: left;
+      font-size: 12px;
+      color: $primary-color;
+    }
+
+    img {
+      margin-top: 20px;
+      width: 220px;
+      height: 160px;
+      margin-bottom: 10px;
+    }
+    h4{
+      font-family: 'Roboto', sans-serif;
+      text-align: left;
+      font-size: 12px;
+      margin-bottom: 10px;
+      color: $primary-color;
+      align-self: flex-start;
+    }
+
+    h3 {
+      font-family: 'Roboto', sans-serif;
+      text-align: left;
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: $primary-color;
+
+    }
+
+  }
+}
+
+
+
+
