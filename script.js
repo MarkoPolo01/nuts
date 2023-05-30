@@ -2,7 +2,9 @@ function createSlider() {
     const sliderContainer = document.querySelector('.slider-container');
     const slider = document.querySelector('.slider');
     const prevBtn = document.querySelector('.prev-btn');
+    const prevImg = prevBtn.querySelector('img');
     const nextBtn = document.querySelector('.next-btn');
+    const nextImg = nextBtn.querySelector('img');
     const scrollBar = document.querySelector('.scroll-bar');
     const scrollThumb = document.querySelector('.scroll-thumb');
 
@@ -57,17 +59,25 @@ function createSlider() {
 
     function prevSlide() {
         if (currentIndex > 0) {
+            prevImg.src = './img/click-left.jpg';
             currentIndex--;
             scrollToSlide(currentIndex);
             updateScrollBar();
+            setTimeout(()=>{
+                prevImg.src = './img/arrow-left.jpg';
+            },500);
         }
     }
 
     function nextSlide() {
         if (currentIndex < slideCount - slidePerView) {
+            nextImg.src = './img/click-right.jpg';
             currentIndex++;
             scrollToSlide(currentIndex);
             updateScrollBar();
+            setTimeout(()=>{
+                nextImg.src = './img/arrow-right.jpg';
+            },500);
         }
     }
 
