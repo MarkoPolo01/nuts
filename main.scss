@@ -108,6 +108,7 @@ $primary-color: #527CCD;
 
     @media (max-width: 1024px) {
       max-width: 400px;
+
     }
   }
 
@@ -116,10 +117,11 @@ $primary-color: #527CCD;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid #527CCD;
+    border: 1px solid #C8D9FB;
     padding: 5px;
     margin-right: 20px;
     margin-left: 20px;
+
 
     p {
       font-family: 'Roboto', sans-serif;
@@ -151,5 +153,8 @@ $primary-color: #527CCD;
       margin-bottom: 10px;
       color: $primary-color;
     }
+  }
+  .slide:hover {
+    border: 1px solid $primary-color;
   }
 }
