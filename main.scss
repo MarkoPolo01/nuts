@@ -2,7 +2,16 @@ $primary-color: #527CCD;
 
 .basic_div {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+width: 100%;
+
+  h1 {
+    color: $primary-color;
+    font-size: 50px;
+    white-space: nowrap;
+
+  }
 
   .btn {
     display: flex;
@@ -14,31 +23,37 @@ $primary-color: #527CCD;
       order: 1;
     }
 
-    h1 {
-      color: $primary-color;
-      font-size: 50px;
-    }
-
     .navigation {
       display: flex;
 
       @media (max-width: 1024px) {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
       }
 
       .scroll-size {
         width: 100%;
-        margin-top: 60px;
+        margin-top: 30px;
         max-width: 360px;
         height: 1px;
         background-color: #C8D9FB;
         border-radius: 5px;
+        order: 1;
+
+        @media (max-width: 1024px) {
+         order: 2;
+          max-width: 130px;
+        }
 
         .scroll-bar {
           width: 360px;
           height: 1px;
           background-color: #C8D9FB;
+
+          @media (max-width: 1024px) {
+            order: 2;
+            max-width: 130px;
+          }
 
           .scroll-thumb {
             width: 60px;
@@ -52,16 +67,19 @@ $primary-color: #527CCD;
           }
         }
       }
+      .prev-btn {
+        margin-left: 40px;
+        order: 2;
+        @media (max-width: 1024px) {
+          order: 1;
+        }
+      }
 
       .next-btn {
         margin-left: 40px;
-
-
+          order: 3;
       }
-      .prev-btn {
-        margin-left: 40px;
 
-      }
     }
   }
 
@@ -87,20 +105,21 @@ $primary-color: #527CCD;
     display: flex;
     max-width: calc(200px * 4 + 40px * 3);
     transition: transform 0.5s ease-in-out;
+
+    @media (max-width: 1024px) {
+      max-width: 400px;
+    }
   }
 
   .slide {
-    width: 200px;
-    height: 400px;
-    flex-shrink: 1;
+    max-width: 260px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
     border: 1px solid #527CCD;
-    margin-right: 40px;
+    padding: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
 
     p {
       font-family: 'Roboto', sans-serif;
