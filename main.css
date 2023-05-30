@@ -6,6 +6,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  order: 2;
+}
+@media (min-width: 1024px) {
+  .basic_div .btn {
+    order: 1;
+  }
 }
 .basic_div .btn h1 {
   color: #527CCD;
@@ -14,20 +20,26 @@
 .basic_div .btn .navigation {
   display: flex;
 }
-.basic_div .btn .scroll-size {
+@media (max-width: 1024px) {
+  .basic_div .btn .navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.basic_div .btn .navigation .scroll-size {
   width: 100%;
   margin-top: 60px;
   max-width: 360px;
-  height: 1px; /* Increase height for a more noticeable scrollbar */
+  height: 1px;
   background-color: #C8D9FB;
-  border-radius: 5px; /* Add rounded corners for the scrollbar */
+  border-radius: 5px;
 }
-.basic_div .btn .scroll-size .scroll-bar {
+.basic_div .btn .navigation .scroll-size .scroll-bar {
   width: 360px;
   height: 1px;
   background-color: #C8D9FB;
 }
-.basic_div .btn .scroll-size .scroll-bar .scroll-thumb {
+.basic_div .btn .navigation .scroll-size .scroll-bar .scroll-thumb {
   width: 60px;
   height: 1px;
   background-color: #527CCD;
@@ -35,12 +47,12 @@
   position: relative;
   left: 0;
   top: 0;
-  border-radius: 5px; /* Add rounded corners for the thumb */
+  border-radius: 5px;
 }
-.basic_div .btn .next-btn {
+.basic_div .btn .navigation .next-btn {
   margin-left: 40px;
 }
-.basic_div .btn .prev-btn {
+.basic_div .btn .navigation .prev-btn {
   margin-left: 40px;
 }
 .basic_div button {
@@ -49,14 +61,20 @@
   padding: 0;
 }
 .basic_div .slider-container {
-  width: 1100px;
-  height: 800px;
+  width: 400px;
   overflow: hidden;
   display: flex;
+  order: 1;
+}
+@media (min-width: 1024px) {
+  .basic_div .slider-container {
+    width: 1100px;
+    order: 2;
+  }
 }
 .basic_div .slider {
   display: flex;
-  max-width: 920px; /* Adjust the calculation based on your slide width and spacing */
+  max-width: 920px;
   transition: transform 0.5s ease-in-out;
 }
 .basic_div .slide {

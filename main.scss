@@ -8,7 +8,11 @@ $primary-color: #527CCD;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    order: 2;
 
+    @media (min-width: 1024px) {
+      order: 1;
+    }
 
     h1 {
       color: $primary-color;
@@ -17,41 +21,47 @@ $primary-color: #527CCD;
 
     .navigation {
       display: flex;
-    }
 
-    .scroll-size {
-      width: 100%;
-      margin-top: 60px;
-      max-width: 360px;
-      height: 1px; /* Increase height for a more noticeable scrollbar */
-      background-color: #C8D9FB;
-      border-radius: 5px; /* Add rounded corners for the scrollbar */
-      .scroll-bar {
-        width: 360px;
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .scroll-size {
+        width: 100%;
+        margin-top: 60px;
+        max-width: 360px;
         height: 1px;
         background-color: #C8D9FB;
+        border-radius: 5px;
 
-
-
-        .scroll-thumb {
-          width: 60px;
+        .scroll-bar {
+          width: 360px;
           height: 1px;
-          background-color: #527CCD;
-          cursor: pointer;
-          position: relative;
-          left: 0;
-          top: 0;
-          border-radius: 5px; /* Add rounded corners for the thumb */
+          background-color: #C8D9FB;
+
+          .scroll-thumb {
+            width: 60px;
+            height: 1px;
+            background-color: #527CCD;
+            cursor: pointer;
+            position: relative;
+            left: 0;
+            top: 0;
+            border-radius: 5px;
+          }
         }
       }
-    }
 
-    .next-btn {
-      margin-left: 40px;
-    }
+      .next-btn {
+        margin-left: 40px;
 
-    .prev-btn {
-      margin-left: 40px;
+
+      }
+      .prev-btn {
+        margin-left: 40px;
+
+      }
     }
   }
 
@@ -62,15 +72,20 @@ $primary-color: #527CCD;
   }
 
   .slider-container {
-    width: 1100px;
-    height: 800px;
+    width: 400px;
     overflow: hidden;
     display: flex;
+    order: 1;
+
+    @media (min-width: 1024px) {
+      width: 1100px;
+      order: 2;
+    }
   }
 
   .slider {
     display: flex;
-    max-width: calc(200px * 4 + 40px * 3); /* Adjust the calculation based on your slide width and spacing */
+    max-width: calc(200px * 4 + 40px * 3);
     transition: transform 0.5s ease-in-out;
   }
 
@@ -100,7 +115,8 @@ $primary-color: #527CCD;
       height: 160px;
       margin-bottom: 10px;
     }
-    h4{
+
+    h4 {
       font-family: 'Roboto', sans-serif;
       text-align: left;
       font-size: 12px;
@@ -115,12 +131,6 @@ $primary-color: #527CCD;
       font-size: 16px;
       margin-bottom: 10px;
       color: $primary-color;
-
     }
-
   }
 }
-
-
-
-
