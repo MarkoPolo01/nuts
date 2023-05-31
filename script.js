@@ -78,6 +78,7 @@ function createSlider() {
             avtoSlide();
         }
     }
+
     function getTallestSlideHeight() {
         let maxHeight = 0;
         slidesData.forEach(slideData => {
@@ -112,9 +113,8 @@ function createSlider() {
     nextBtn.addEventListener('click', nextSlide);
 
 
-
     getSlidesData();
- const  maxHeight =getTallestSlideHeight();
+    const maxHeight = getTallestSlideHeight();
     avtoSlide();
 
 }

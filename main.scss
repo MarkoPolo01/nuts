@@ -55,7 +55,7 @@ $primary-color: #527CCD;
         order: 1;
 
         @media (max-width: 1024px) {
-         order: 2;
+          order: 2;
           max-width: 130px;
         }
 
@@ -67,6 +67,7 @@ $primary-color: #527CCD;
           @media (max-width: 1024px) {
             order: 2;
             max-width: 130px;
+            margin-left: 5px;
           }
 
           .scroll-thumb {
@@ -81,6 +82,7 @@ $primary-color: #527CCD;
           }
         }
       }
+
       .prev-btn {
         margin-left: 50px;
         order: 2;
@@ -91,7 +93,8 @@ $primary-color: #527CCD;
 
       .next-btn {
         margin-left: 50px;
-          order: 3;
+        order: 3;
+        margin-right: 50px;
       }
 
     }
@@ -103,7 +106,8 @@ $primary-color: #527CCD;
     padding: 0;
   }
 
-  .slider-container {
+
+  .slider {
     overflow: hidden;
     display: flex;
     order: 1;
@@ -114,21 +118,12 @@ $primary-color: #527CCD;
     }
   }
 
-  .slider {
-    display: flex;
-    max-width: 400px;
-    transition: transform 0.5s ease-in-out;
-    @media (max-width: 1024px) {
-      max-width: 400px;
-
-    }
-  }
-
   .slide {
-    max-width: 260px;
+    width: 240px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border: 1px solid #C8D9FB;
     padding: 20px;
     margin-right: 20px;
@@ -136,9 +131,13 @@ $primary-color: #527CCD;
     height: var(--slide-height);
     opacity: 0;
     transition: opacity 0.3s ease;
-
     &.active {
       opacity: 1;
+    }
+    @media (max-width: 1024px) {
+    width: 280px;
+
+
     }
 
 
@@ -153,6 +152,10 @@ $primary-color: #527CCD;
       width: 220px;
       height: 160px;
       margin-bottom: 10px;
+      @media (max-width: 1024px) {
+        width: 240px;
+
+      }
     }
 
     h4 {
@@ -172,7 +175,13 @@ $primary-color: #527CCD;
       color: $primary-color;
     }
   }
+
   .slide:hover {
     border: 1px solid $primary-color;
+  }
+}
+@media (max-width: 1024px) {
+  .basic_div .slide:not(:first-child) {
+    display: none;
   }
 }

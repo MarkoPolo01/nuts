@@ -69,6 +69,7 @@
   .basic_div .btn .navigation .scroll-size .scroll-bar {
     order: 2;
     max-width: 130px;
+    margin-left: 5px;
   }
 }
 .basic_div .btn .navigation .scroll-size .scroll-bar .scroll-thumb {
@@ -93,38 +94,30 @@
 .basic_div .btn .navigation .next-btn {
   margin-left: 50px;
   order: 3;
+  margin-right: 50px;
 }
 .basic_div button {
   border: none;
   background: none;
   padding: 0;
 }
-.basic_div .slider-container {
+.basic_div .slider {
   overflow: hidden;
   display: flex;
   order: 1;
 }
 @media (min-width: 1024px) {
-  .basic_div .slider-container {
+  .basic_div .slider {
     width: 1200px;
     order: 2;
   }
 }
-.basic_div .slider {
-  display: flex;
-  max-width: 400px;
-  transition: transform 0.5s ease-in-out;
-}
-@media (max-width: 1024px) {
-  .basic_div .slider {
-    max-width: 400px;
-  }
-}
 .basic_div .slide {
-  max-width: 260px;
+  width: 240px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border: 1px solid #C8D9FB;
   padding: 20px;
   margin-right: 20px;
@@ -136,6 +129,11 @@
 .basic_div .slide.active {
   opacity: 1;
 }
+@media (max-width: 1024px) {
+  .basic_div .slide {
+    width: 280px;
+  }
+}
 .basic_div .slide p {
   font-family: "Roboto", sans-serif;
   text-align: left;
@@ -146,6 +144,11 @@
   width: 220px;
   height: 160px;
   margin-bottom: 10px;
+}
+@media (max-width: 1024px) {
+  .basic_div .slide img {
+    width: 240px;
+  }
 }
 .basic_div .slide h4 {
   font-family: "Roboto", sans-serif;
@@ -164,6 +167,12 @@
 }
 .basic_div .slide:hover {
   border: 1px solid #527CCD;
+}
+
+@media (max-width: 1024px) {
+  .basic_div .slide:not(:first-child) {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
