@@ -4,15 +4,18 @@ $primary-color: #527CCD;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  height: auto;
+
 
   .header_name_mobile {
     color: $primary-color;
-    font-size: 50px;
+    font-size: 40px;
     white-space: nowrap;
+
 
     @media (min-width: 1024px) {
       display: none;
+      font-size: 55px;
     }
   }
 
@@ -26,11 +29,14 @@ $primary-color: #527CCD;
       order: 1;
     }
 
+
     .header_name {
       color: $primary-color;
       font-size: 30px;
       white-space: nowrap;
-      margin-right: 230px;
+      display: flex;
+      margin-right: 250px;
+
 
       @media (max-width: 1024px) {
         display: none;
@@ -39,62 +45,54 @@ $primary-color: #527CCD;
 
     .navigation {
       display: flex;
+      margin-top: 60px;
 
       @media (max-width: 1024px) {
         flex-direction: row;
-        align-items: center;
+
       }
 
-      .scroll-size {
-        width: 100%;
-        margin-top: 70px;
-        max-width: 360px;
+
+      .scroll-bar {
+        order: 1;
+        width: 360px;
         height: 1px;
         background-color: #C8D9FB;
-        border-radius: 5px;
-        order: 1;
 
         @media (max-width: 1024px) {
           order: 2;
           max-width: 130px;
+
         }
 
-        .scroll-bar {
-          width: 360px;
+        .scroll-thumb {
+          width: 60px;
           height: 1px;
-          background-color: #C8D9FB;
-
-          @media (max-width: 1024px) {
-            order: 2;
-            max-width: 130px;
-            margin-left: 5px;
-          }
-
-          .scroll-thumb {
-            width: 60px;
-            height: 1px;
-            background-color: #527CCD;
-            cursor: pointer;
-            position: relative;
-            left: 0;
-            top: 0;
-            border-radius: 5px;
-          }
+          background-color: #527CCD;
+          cursor: pointer;
+          position: relative;
+          left: 0;
+          top: 0;
+          border-radius: 5px;
         }
       }
+
 
       .prev-btn {
         margin-left: 50px;
         order: 2;
         @media (max-width: 1024px) {
           order: 1;
+          margin-right: 80px;
         }
       }
 
       .next-btn {
         margin-left: 50px;
         order: 3;
-        margin-right: 50px;
+        @media (max-width: 1024px) {
+          margin-right: 120px;
+        }
       }
 
     }
@@ -104,22 +102,30 @@ $primary-color: #527CCD;
     border: none;
     background: none;
     padding: 0;
+
+    //img {
+    //  @media (max-width: 1024px) {
+    //    width: 140px;
+    //    height: 140px;
+    //  }
+    //}
   }
 
 
   .slider {
-    overflow: hidden;
     display: flex;
     order: 1;
 
+
     @media (min-width: 1024px) {
-      width: 1200px;
+
       order: 2;
     }
   }
 
   .slide {
-    width: 240px;
+    width: 220px;
+    height: 380px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,34 +134,40 @@ $primary-color: #527CCD;
     padding: 20px;
     margin-right: 20px;
     margin-left: 20px;
-    height: var(--slide-height);
+    //height: var(--slide-height);
     opacity: 0;
     transition: opacity 0.3s ease;
+
     &.active {
       opacity: 1;
     }
-    @media (max-width: 1024px) {
-    width: 280px;
 
-
-    }
-
+    //@media (max-width: 1024px) {
+    //  width: 540px;
+    //  height: 810px;
+    //  padding: 30px;
+    //}
 
     p {
       font-family: 'Roboto', sans-serif;
       text-align: left;
       font-size: 12px;
       color: $primary-color;
+      //@media (max-width: 1024px) {
+      //  font-size: 32px;
+      //
+      //}
     }
 
     img {
       width: 220px;
       height: 160px;
       margin-bottom: 10px;
-      @media (max-width: 1024px) {
-        width: 240px;
-
-      }
+      float: left;
+      //@media (max-width: 1024px) {
+      //  width: 520px;
+      //  height: 350px;
+      //}
     }
 
     h4 {
@@ -165,6 +177,10 @@ $primary-color: #527CCD;
       margin-bottom: 10px;
       color: $primary-color;
       align-self: flex-start;
+      //@media (max-width: 1024px) {
+      //  font-size: 32px;
+      //
+      //}
     }
 
     h3 {
@@ -173,6 +189,10 @@ $primary-color: #527CCD;
       font-size: 16px;
       margin-bottom: 10px;
       color: $primary-color;
+      //@media (max-width: 1024px) {
+      //  font-size: 24px;
+      //
+      //}
     }
   }
 
@@ -180,6 +200,7 @@ $primary-color: #527CCD;
     border: 1px solid $primary-color;
   }
 }
+
 @media (max-width: 1024px) {
   .basic_div .slide:not(:first-child) {
     display: none;
