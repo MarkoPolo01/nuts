@@ -38,9 +38,9 @@ function createSlider() {
             slide.className = 'slide';
             slide.innerHTML = `
                 <img src="./img/Фото.jpg" alt="photo" />
-                <h4>${slideData.dataTime}</h4>
-                <h3>${slideData.title}</h3>
-                <p>${slideData.description}</p>
+                <div class="slide_data"><p>${slideData.dataTime}</p></div>
+                <div class="slide_title"><p>${slideData.title}</p></div>
+                <div class="slide_description"><p>${slideData.description}</p></div>
             `;
             if (index === slidePerView - 1) {
                 slide.classList.add('active');
@@ -89,9 +89,9 @@ function createSlider() {
             slide.className = 'slide';
             slide.innerHTML = `
                 <img src="./img/Фото.jpg" alt="photo" />
-                <h4>${slideData.dataTime}</h4>
-                <h3>${slideData.title}</h3>
-                <p>${slideData.description}</p>
+                 <div class="slide_data"><p>${slideData.dataTime}</p></div>
+                <div class="slide_title"><p>${slideData.title}</p></div>
+                <div class="slide_description"><p>${slideData.description}</p></div>
             `;
             slide.style.visibility = 'hidden';
             document.body.appendChild(slide);
