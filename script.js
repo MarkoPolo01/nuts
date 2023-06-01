@@ -22,6 +22,7 @@ function createSlider() {
                 slidesData = data;
                 slideCount = slidesData.length;
                 createSlides();
+                updateScrollThumbPosition();
             })
             .catch(error => console.log(error));
     }
@@ -36,11 +37,11 @@ function createSlider() {
             const slide = document.createElement('div');
             slide.className = 'slide';
             slide.innerHTML = `
-    <img src="./img/Фото.jpg" alt="photo" />
-    <h4>${slideData.dataTime}</h4>
-    <h3>${slideData.title}</h3>
-    <p>${slideData.description}</p>
-  `;
+                <img src="./img/Фото.jpg" alt="photo" />
+                <h4>${slideData.dataTime}</h4>
+                <h3>${slideData.title}</h3>
+                <p>${slideData.description}</p>
+            `;
             if (index === slidePerView - 1) {
                 slide.classList.add('active');
             }
@@ -63,6 +64,7 @@ function createSlider() {
                 prevImg.src = './img/arrow-left.jpg';
             }, 300);
             avtoSlide();
+            updateScrollThumbPosition();
         }
     }
 
@@ -76,6 +78,7 @@ function createSlider() {
                 nextImg.src = './img/arrow-right.jpg';
             }, 300);
             avtoSlide();
+            updateScrollThumbPosition();
         }
     }
 
@@ -85,11 +88,11 @@ function createSlider() {
             const slide = document.createElement('div');
             slide.className = 'slide';
             slide.innerHTML = `
-      <img src="./img/Фото.jpg" alt="photo" />
-      <h4>${slideData.dataTime}</h4>
-      <h3>${slideData.title}</h3>
-      <p>${slideData.description}</p>
-    `;
+                <img src="./img/Фото.jpg" alt="photo" />
+                <h4>${slideData.dataTime}</h4>
+                <h3>${slideData.title}</h3>
+                <p>${slideData.description}</p>
+            `;
             slide.style.visibility = 'hidden';
             document.body.appendChild(slide);
             const slideHeight = slide.clientHeight;
@@ -101,22 +104,31 @@ function createSlider() {
         return maxHeight;
     }
 
+    function updateScrollThumbPosition() {
+        const totalSlides = slidesData.length;
+        const visibleSlides = slidePerView;
+        const scrollBarWidth = scrollBar.offsetWidth;
+        const scrollThumbWidth = scrollThumb.offsetWidth;
+        const maxThumbPosition = scrollBarWidth - scrollThumbWidth;
+        const thumbPosition = (currentIndex / (totalSlides - visibleSlides)) * maxThumbPosition;
+
+        scrollThumb.style.transform = `translateX(${thumbPosition}px)`;
+    }
+
     function avtoSlide() {
         if (slideCount >= slidesData.length) {
             intervalId = setInterval(() => {
                 nextSlide();
-            }, 4000)
+            }, 4000);
         }
     }
 
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
 
-
     getSlidesData();
     const maxHeight = getTallestSlideHeight();
     avtoSlide();
-
 }
 
 createSlider();

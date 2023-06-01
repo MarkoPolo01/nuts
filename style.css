@@ -1,0 +1,51 @@
+.slider-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.scroll-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #C8D9FB;
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.scroll-thumb {
+    width: 20px;
+    height: 100%;
+    background-color: #527CCD;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: left 0.3s ease;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.prev-btn,
+.next-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.prev-btn img,
+.next-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Дополнительные стили для слайдов и остальных элементов */
