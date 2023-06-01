@@ -173,18 +173,21 @@
 }
 .basic_div .slide .slide_title {
   margin-bottom: 10px;
+  width: 230px;
 }
 .basic_div .slide .slide_title p {
   font-family: "Roboto", sans-serif;
   text-align: left;
   font-size: 16px;
   color: #527CCD;
+  line-height: 26px;
 }
-.basic_div .slide .slide_description {
+.basic_div .slide .slide_description p {
   font-family: "Roboto", sans-serif;
   text-align: left;
   font-size: 12px;
   color: #527CCD;
+  line-height: 22px;
 }
 .basic_div .slide:hover {
   border: 1px solid #527CCD;

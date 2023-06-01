@@ -39,7 +39,7 @@ function createSlider() {
             slide.innerHTML = `
                 <img src="./img/Фото.jpg" alt="photo" />
                 <div class="slide_data"><p>${slideData.dataTime}</p></div>
-                <div class="slide_title"><p>${slideData.title}</p></div>
+                <div class="slide_title dynamic-height"><p>${slideData.title}</p></div>
                 <div class="slide_description"><p>${slideData.description}</p></div>
             `;
             if (index === slidePerView - 1) {
@@ -47,10 +47,27 @@ function createSlider() {
             }
             slider.appendChild(slide);
 
-            // Wait for the slide to be appended before applying the animation class
             setTimeout(() => {
                 slide.classList.add('active');
             }, 0);
+        });
+
+        setSlideTitleHeight();
+    }
+
+    function setSlideTitleHeight() {
+        const slideTitleElements = document.querySelectorAll('.dynamic-height');
+        let maxHeight = 0;
+
+        slideTitleElements.forEach(element => {
+            const slideTitleHeight = element.offsetHeight;
+            if (slideTitleHeight > maxHeight) {
+                maxHeight = slideTitleHeight;
+            }
+        });
+
+        slideTitleElements.forEach(element => {
+            element.style.height = `${maxHeight}px`;
         });
     }
 
@@ -89,7 +106,7 @@ function createSlider() {
             slide.className = 'slide';
             slide.innerHTML = `
                 <img src="./img/Фото.jpg" alt="photo" />
-                 <div class="slide_data"><p>${slideData.dataTime}</p></div>
+                <div class="slide_data"><p>${slideData.dataTime}</p></div>
                 <div class="slide_title"><p>${slideData.title}</p></div>
                 <div class="slide_description"><p>${slideData.description}</p></div>
             `;

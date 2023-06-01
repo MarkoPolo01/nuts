@@ -186,21 +186,26 @@ $primary-color: #527CCD;
 
     .slide_title {
       margin-bottom: 10px;
+      width: 230px;
+      //height: 78px;
 
       p {
         font-family: 'Roboto', sans-serif;
         text-align: left;
         font-size: 16px;
         color: $primary-color;
-
+        line-height:26px;
       }
     }
 
     .slide_description {
-      font-family: 'Roboto', sans-serif;
-      text-align: left;
-      font-size: 12px;
-      color: $primary-color;
+      p{
+        font-family: 'Roboto', sans-serif;
+        text-align: left;
+        font-size: 12px;
+        color: $primary-color;
+        line-height:22px;
+      }
     }
   }
 
