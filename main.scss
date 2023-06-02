@@ -1,4 +1,5 @@
 $primary-color: #527CCD;
+$primary-color-reserve:#C8D9FB;
 
 * {
   padding: 0;
@@ -74,7 +75,7 @@ $primary-color: #527CCD;
         order: 1;
         width: 360px;
         height: 1px;
-        background-color: #C8D9FB;
+        background-color: $primary-color-reserve;
 
         @media (max-width: 1024px) {
           order: 2;
@@ -104,6 +105,9 @@ $primary-color: #527CCD;
       .prev-btn {
         margin-left: 40px;
         order: 2;
+        width: 55px;
+        height: 55px;
+        border: 1px solid $primary-color-reserve;
         @media (max-width: 1024px) {
           order: 1;
           margin-left: 0;
@@ -113,8 +117,13 @@ $primary-color: #527CCD;
       .next-btn {
         margin-left: 40px;
         order: 3;
+        width: 60px;
+        height: 60px;
+        border: 1px solid $primary-color-reserve;
         @media (max-width: 1024px) {
           margin-left: 0;
+          width: 55px;
+          height: 55px;
 
         }
       }
@@ -147,7 +156,7 @@ $primary-color: #527CCD;
     display: flex;
     justify-content: start;
     flex-direction: column;
-    border: 1px solid #C8D9FB;
+    border: 1px solid $primary-color-reserve;
     padding: 20px;
     margin-right: 20px;
     margin-left: 20px;
@@ -181,13 +190,14 @@ $primary-color: #527CCD;
         margin-bottom: 10px;
         float: left;
         padding: 20px;
+        @media (max-width: 1024px) {
+          width: 240px;
+        }
       }
     }
 
     .slide_title {
       margin-bottom: 10px;
-      width: 230px;
-      //height: 78px;
 
       p {
         font-family: 'Roboto', sans-serif;

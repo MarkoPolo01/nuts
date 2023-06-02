@@ -98,6 +98,9 @@
 .basic_div .btn .navigation .prev-btn {
   margin-left: 40px;
   order: 2;
+  width: 55px;
+  height: 55px;
+  border: 1px solid #C8D9FB;
 }
 @media (max-width: 1024px) {
   .basic_div .btn .navigation .prev-btn {
@@ -108,10 +111,15 @@
 .basic_div .btn .navigation .next-btn {
   margin-left: 40px;
   order: 3;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #C8D9FB;
 }
 @media (max-width: 1024px) {
   .basic_div .btn .navigation .next-btn {
     margin-left: 0;
+    width: 55px;
+    height: 55px;
   }
 }
 .basic_div button {
@@ -171,9 +179,13 @@
   float: left;
   padding: 20px;
 }
+@media (max-width: 1024px) {
+  .basic_div .slide .slide_data img {
+    width: 240px;
+  }
+}
 .basic_div .slide .slide_title {
   margin-bottom: 10px;
-  width: 230px;
 }
 .basic_div .slide .slide_title p {
   font-family: "Roboto", sans-serif;

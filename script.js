@@ -2,9 +2,7 @@ function createSlider() {
     const sliderContainer = document.querySelector('.slider-container');
     const slider = document.querySelector('.slider');
     const prevBtn = document.querySelector('.prev-btn');
-    const prevImg = prevBtn.querySelector('img');
     const nextBtn = document.querySelector('.next-btn');
-    const nextImg = nextBtn.querySelector('img');
     let slideWidth = 200;
     let slideCount = 4;
     let slidePerView = 4;
@@ -74,11 +72,11 @@ function createSlider() {
     function prevSlide() {
         if (currentIndex > 0) {
             clearInterval(intervalId);
-            prevImg.src = './img/click-left.jpg';
+            prevBtn.style.backgroundColor = '#C8D9FB';
             currentIndex--;
             createSlides();
             setTimeout(() => {
-                prevImg.src = './img/arrow-left.jpg';
+                prevBtn.style.backgroundColor = '#FFFFFF';
             }, 300);
             avtoSlide();
             updateScrollThumbPosition();
@@ -88,11 +86,11 @@ function createSlider() {
     function nextSlide() {
         if (currentIndex < slideCount - slidePerView) {
             clearInterval(intervalId);
-            nextImg.src = './img/click-right.jpg';
+            nextBtn.style.backgroundColor = '#C8D9FB';
             currentIndex++;
             createSlides();
             setTimeout(() => {
-                nextImg.src = './img/arrow-right.jpg';
+                nextBtn.style.backgroundColor = '#FFFFFF';
             }, 300);
             avtoSlide();
             updateScrollThumbPosition();
