@@ -98,8 +98,6 @@
 .basic_div .btn .navigation .prev-btn {
   margin-left: 40px;
   order: 2;
-  width: 55px;
-  height: 55px;
   border: 1px solid #C8D9FB;
 }
 @media (max-width: 1024px) {
@@ -111,20 +109,18 @@
 .basic_div .btn .navigation .next-btn {
   margin-left: 40px;
   order: 3;
-  width: 60px;
-  height: 60px;
   border: 1px solid #C8D9FB;
 }
 @media (max-width: 1024px) {
   .basic_div .btn .navigation .next-btn {
     margin-left: 0;
-    width: 55px;
-    height: 55px;
   }
 }
 .basic_div button {
   border: none;
   background: none;
+  width: 60px;
+  height: 60px;
 }
 @media (max-width: 1024px) {
   .basic_div button {
