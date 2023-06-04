@@ -35,11 +35,11 @@ function createSlider() {
             const slide = document.createElement('div');
             slide.className = 'slide';
             slide.innerHTML = `
-                <img src="./img/Фото.jpg" alt="photo" />
-                <div class="slide_data"><p>${slideData.dataTime}</p></div>
-                <div class="slide_title dynamic-height"><p>${slideData.title}</p></div>
-                <div class="slide_description"><p>${slideData.description}</p></div>
-            `;
+        <img src="./img/Фото.jpg" alt="photo" />
+        <div class="slide_data"><p>${slideData.dataTime}</p></div>
+        <div class="slide_title dynamic-height"><p>${slideData.title}</p></div>
+        <div class="slide_description"><p>${slideData.description}</p></div>
+      `;
             if (index === slidePerView - 1) {
                 slide.classList.add('active');
             }
@@ -103,11 +103,11 @@ function createSlider() {
             const slide = document.createElement('div');
             slide.className = 'slide';
             slide.innerHTML = `
-                <img src="./img/Фото.jpg" alt="photo" />
-                <div class="slide_data"><p>${slideData.dataTime}</p></div>
-                <div class="slide_title"><p>${slideData.title}</p></div>
-                <div class="slide_description"><p>${slideData.description}</p></div>
-            `;
+        <img src="./img/Фото.jpg" alt="photo" />
+        <div class="slide_data"><p>${slideData.dataTime}</p></div>
+        <div class="slide_title"><p>${slideData.title}</p></div>
+        <div class="slide_description"><p>${slideData.description}</p></div>
+      `;
             slide.style.visibility = 'hidden';
             document.body.appendChild(slide);
             const slideHeight = slide.clientHeight;
@@ -138,8 +138,30 @@ function createSlider() {
         }
     }
 
+    function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    }
+
+    function handleTouchEnd(event) {
+        const endX = event.changedTouches[0].clientX;
+        const endY = event.changedTouches[0].clientY;
+        const diffX = startX - endX;
+        const diffY = startY - endY;
+
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    }
+
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
+    slider.addEventListener('touchstart', handleTouchStart);
+    slider.addEventListener('touchend', handleTouchEnd);
 
     getSlidesData();
     const maxHeight = getTallestSlideHeight();
